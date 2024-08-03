@@ -1,0 +1,31 @@
+---
+import { fade } from "astro:transitions";
+import Hoc from "./Hoc.astro";
+---
+
+<Hoc id="Hero">
+  <section class="pb-20">
+    <div class="flex flex-col sm:flex-row flex-grow items-center justify-between gap-10 my-20 md:my-16 ml-4">
+      <div class="w-full h-fit sm:w-1/2 border-[18px] border-[#7572FF] py-6 sm:py-8 basis-1/2">
+        <div class="bg-white py-10 pl-[30px] relative -left-6 sm:-left-10">
+          <h1 transition:animate="slide" class="text-2xl md:text-3xl lg:text-5xl text-royal-blue font-bold uppercase">
+            A Great App Makes Your Life Better
+          </h1>
+          <p class="text-base font-normal text-[#6C6C72] w-[98%] sm:w-[95%] md:w-[85%]">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet.
+          </p>
+          <h3 class="uppercase text-2xl font-semibold mt-[30px] sm:mt-[23px] md:mt-[52px]">download now</h3>
+          <div class="flex gap-2 sm:gap-3">
+            <img class="w-[108px] md:w-36 lg:w-auto" src="/playstore.svg" alt="">
+            <img class="w-[108px] md:w-36 lg:w-auto" src="/Apple.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class=" relative flex items-center justify-center">
+          <img class="w-[300px] sm:w-[260px] lg:w-auto " src="/Mobile1_croped.png" width="" alt="">
+      </div>
+    </div>
+  </section>
+</Hoc>

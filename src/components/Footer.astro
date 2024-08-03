@@ -1,0 +1,83 @@
+---
+import Hoc from "./Hoc.astro";
+import Facebook from "./icon/Facebook.astro";
+import Insta from "./icon/Insta.astro";
+import Send from "./icon/Send.astro";
+import Twitter from "./icon/Twitter.astro";
+import Youtube from "./icon/Youtube.astro";
+import Copyright from "./icon/Copyright.astro";
+---
+
+<div class="bg-[#232233]">
+  <div
+    id="Footer"
+    class="max-w-7xl mx-5 sm:mx-auto pt-[60px] sm:pt-[120px] pb-[64px] h-fit"
+  >
+    <div class="grid text-white grid-cols-1 sm:grid-cols-3 gap-[60px]">
+      <div class="flex flex-col justify-between max-sm:gap-8">
+        <div>
+          <h4 class="font-bold text-3xl uppercase">LOGO</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra
+            nunc ante velit vitae. Est tellus vitae, nullam lobortis enim.
+          </p>
+        </div>
+        <div class="w-[85%] flex justify-between items-center">
+          <Facebook
+            class="w-[24px] h-[24px] text-white hover:text-royal-blue focus-within:text-royal-blue cursor-pointer"
+          />
+          <span class="border-[1px] h-[24px] border-white block"></span>
+          <Insta
+            class="w-[24px] h-[24px] text-white hover:text-royal-blue focus-within:text-royal-blue cursor-pointer"
+          />
+          <span class="border-[1px] h-[24px] border-white block"></span>
+          <Twitter
+            class="w-[24px] h-[24px] text-white hover:text-royal-blue focus-within:text-royal-blue cursor-pointer"
+          />
+          <span class="border-[1px] h-[24px] border-white block"></span>
+          <Youtube
+            class="w-[24px] h-[24px] text-white hover:text-royal-blue focus-within:text-royal-blue cursor-pointer"
+          />
+        </div>
+      </div>
+      <div>
+        <h5 class="font-semibold text-2xl uppercase">quick link</h5>
+        <ul class="">
+          <li class="py-3"><a href="/">About</a></li>
+          <li class="pb-3"><a href="/">Feature</a></li>
+          <li class="pb-3"><a href="/">Screenshot</a></li>
+          <li class=""><a href="/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col justify-between max-sm:gap-8">
+        <div>
+          <h5 class="font-semibold text-2xl uppercase">News Letter</h5>
+          <p class="pt-[12px]">
+            Subscribe our newsletter to get our latest update & news
+          </p>
+        </div>
+        <div class="flex bg-white text-black p-[2px] h-[50px] rounded">
+          <input
+            class="w-full focus:outline-none px-[16px] placeholder-[#6C6C72]"
+            placeholder="Your email address"
+            type="text"
+            name=""
+            id=""
+          />
+          <span
+            class="w-[52px] h-full bg-royal-blue rounded flex items-center justify-center cursor-pointer"
+          >
+            <Send class="w-6 h-6 text-white" />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="w-full h-[1px] bg-white block max-w-7xl mx-auto"></span>
+  <div
+    class="mx-auto py-[18px] text-white flex items-center justify-center gap-[18px]"
+  >
+    <Copyright class="sm:w-6 sm:h-6 w-[18px] h-[18px]" /> 
+    <span class="max-sm:text-xs">Copyright 2021 .Ojjomedia. All Right Reserved.</span>
+  </div>
+</div>
