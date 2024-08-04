@@ -48,7 +48,9 @@ const { selected } = Astro.props;
           data-page={selected == "home"}
           class="data-[page]:text-royal-blue data-[page]:underline"
         >
+        <a href="/">
           HOME
+        </a>
         </li>
         <li data-page={selected == "about"} class="data-[page]:text-royal-blue data-[page]:underline">ABOUT</li>
         <li data-page={selected == "feature"} class="data-[page]:text-royal-blue data-[page]:underline">FEATURE</li>
@@ -69,7 +71,11 @@ const { selected } = Astro.props;
     <div class="flex justify-end p-1 font-semibold text-xl gap-10 col-span-2 lg:col-span-4">
        <div class="hidden lg:flex justify-between items-center gap-10">
         <span class="">SCREENSHOT</span>
-        <span class="">BLOG</span>
+        <span data-page={selected == "blog"}  class="data-[page]:text-royal-blue data-[page]:underline">
+          <a href="/blogs">
+            BLOG
+          </a>
+        </span>
        </div>
        <button class="px-2 md:px-4 text-xs  md:text-xl text-white bg-royal-blue rounded">DOWNLOAD</button>
     </div>

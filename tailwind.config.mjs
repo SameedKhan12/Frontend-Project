@@ -12,7 +12,8 @@ export default {
 			  },
 			  backgroundImage: {
 				'app':"url('/App.png')",
-				'video': "url('/Image.png')"
+				'video': "url('/Image.png')",
+				"custom":"url('/background.png')"
 			  }
 		},
 	},
