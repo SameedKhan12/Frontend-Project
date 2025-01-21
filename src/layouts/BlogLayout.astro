@@ -1,31 +1,59 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Hoc from "../components/Hoc.astro";
-import Search from "../components/icon/Search.astro"
+import Search from "../components/icon/Search.astro";
+import Layout from "./Layout.astro";
+import { Image } from "astro:assets";
+interface Props{
+  title:string
+}
+const {title}=Astro.props;
+const Posts = await Astro.glob("../pages/blogs/post/*.mdx")
 ---
-
+<Layout title="Landing Page/blogs">
 <div class="bg-custom bg-center bg-cover pb-28">
   <Header selected="blog" />
-  <h1 class="text-white text-center mt-[75px] uppercase font-bold text-5xl">
-    Blog
+  <h1 class="text-white text-center mt-[75px] uppercase font-bold text-2xl md:text-3xl lg:text-5xl max-w-7xl mx-5 lg:mx-auto">
+    {title}
   </h1>
 </div>
 <Hoc>
-<div class="flex justify-between gap-[30px]">
-  <div class="flex-[2.5] bg-red-600 h-screen">
-
+  <div class="flex justify-between gap-[30px]">
+    <div class="flex-1 mx-5  lg:flex-[2.5] ">
       <slot />
+    </div>
+    <div class="flex-1 hidden lg:flex flex-col items-center gap-10">
+      <div
+        class="flex justify-between gap-5 w-full border-[#6C6C72] border rounded p-[18px]"
+      >
+        <Search class="text-[#6C6C72] w-6 h-6" />
+        <form action="" class="w-full">
+          <input
+            class="placeholder:text-[#6C6C72] placeholder:font-josefin-sans outline-none focus:outline-none"
+            type="text"
+            placeholder="Search for..."
+          />
+        </form>
+      </div>
+      <hr class="border-[#6C6C72] border bg-transparent w-full" />
+      <div class="w-full">
+        <h3
+          class="text-black font-bold text-2xl lg:text-3xl uppercase text-left"
+        >
+          recent post
+        </h3>
+        {Posts.map((post)=>(
+          <div class="my-10">
+            <Image src={post.frontmatter.imageURL} alt={post.frontmatter.title} width={370} height={180}/>
+            <h4 class="uppercase font-semibold text-xl  ">{post.frontmatter.title}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
   </div>
-  <div class="flex-1 flex flex-col items-center gap-10">
-   <div class="flex justify-between gap-5 w-full border-[#6C6C72] border rounded p-[18px]">
-    <Search class="text-[#6C6C72] w-6 h-6"/>
-    <form action="" class="w-full">
-        <input class="placeholder:text-[#6C6C72] placeholder:font-josefin-sans outline-none focus:outline-none" type="text" placeholder="Search for...">
-    </form>
-   </div>
-   <hr class="border-[#6C6C72] border bg-transparent w-full">
-   <div class="w-full">
-    <h3 class="text-black font-bold text-3xl uppercase text-left">recent post</h3>
-   </div>
-</div>
-</Hoc>
+  </Hoc>
+  <div class="w-full">
+    <Footer />
+  </div>
+</Layout>

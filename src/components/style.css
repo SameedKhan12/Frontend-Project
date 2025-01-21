@@ -1,1 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base{
+    h1{
+        @apply text-4xl;
+        @apply font-bold;
+        @apply px-2
+    }
+    h2{
+        @apply text-3xl;
+        @apply font-bold;
+        @apply mt-4;
+        @apply px-2
+    }
+    h3{
+        @apply text-2xl;
+        @apply font-semibold
+        mt-2 px-2
+    }
+    h4{
+        @apply text-xl my-2 px-2
+    }
+    p{
+        @apply text-[#6C6C72];
+        @apply px-2
+    }
+    
+    img{
+        @apply w-full;
+        @apply mb-3
+    }
+    pre{
+        @apply my-3;
+        @apply rounded;
+        @apply p-3;
+
+    }
+}
 

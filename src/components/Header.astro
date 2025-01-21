@@ -4,6 +4,7 @@ import MaterialSymbolsMail from "../components/icon/MaterialSymbolsMail.astro";
 import Phone from "../components/icon/Phone.astro";
 import MenuIcon from "../components/icon/ManuIcon.astro"
 import Close from "./icon/Close.astro";
+import Menu from "./Menu"
 interface Props {
   selected: string;
 }
@@ -33,10 +34,11 @@ const { selected } = Astro.props;
 
     <!-- Mobile Menu Button -->
     <div class="flex lg:hidden items-center col-span-2">
-      <div id="menuIcon">
+      <!-- <div class="menuIcon cursor-pointer">
 
-        <MenuIcon class="mx-6 w-8 h-8 cursor-pointer"/>
-      </div>
+        <MenuIcon class="mx-6 w-8 h-8"/>
+      </div> -->
+      <Menu  client:only="react"/>
     </div>
 
     <!-- Desktop Navbar Menu -->
@@ -86,23 +88,23 @@ const { selected } = Astro.props;
       <Close class="text-royal-blue close cursor-pointer"/>
     </div>
     <ul class="flex flex-col gap-6">
-      <li class="cursor-pointer hover:text-royal-blue uppercase">HOME</li>
-      <li class="cursor-pointer hover:text-royal-blue uppercase">About</li>
-      <li class="cursor-pointer hover:text-royal-blue uppercase">Feature</li>
-      <li class="cursor-pointer hover:text-royal-blue uppercase">screenshot</li>
-      <li class="cursor-pointer hover:text-royal-blue uppercase">blog</li>
+      <li class="cursor-pointer hover:text-royal-blue uppercase"><a href="/">HOME</a></li>
+      <li class="cursor-pointer hover:text-royal-blue uppercase"><a href="/">About</a></li>
+      <li class="cursor-pointer hover:text-royal-blue uppercase"><a href="/">Feature</a></li>
+      <li class="cursor-pointer hover:text-royal-blue uppercase"><a href="/">screenshot</a></li>
+      <li class="cursor-pointer hover:text-royal-blue uppercase"><a href="/blogs">blog</a></li>
 
     </ul>
   </div>
 </header>
-<script >
+<script is:inline>
 const menu = document.querySelector("#menu")?.classList
 const toggleClasses =()=>{
   menu?.toggle("left-0")
   menu?.toggle("-left-[600px]")
 }
 
-document.querySelector("#menuIcon")?.addEventListener("click",toggleClasses)
+document.querySelector(".menuIcon")?.addEventListener("click",toggleClasses)
 document.querySelector(".close")?.addEventListener("click",toggleClasses)
 
 </script>
